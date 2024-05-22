@@ -10,6 +10,10 @@ Modify the following variables as needed, starting with BASEDIR, to suit your ne
 Set the execute permission on the run-hivemq-docker.bash script on MacOS, Linux, WSL2 with:  
 
 `  chmod +x run-hivemq-docker.bash  `
+
+Run with:
+
+`  ./run-hivemq-docker.bash `
   
 ## Variables  
 The CONF directory should point to the host directory where your HiveMQ Broker configuration lives.  
@@ -17,14 +21,24 @@ The ESECONF variable should point to the host directory of the Enterprise Securi
 The LIC variable should point to the host directory containing the license files.  
 
 
-BASEDIR    :  Base directory for installation  
-CONF       :  Configuration directory for HiveMQ Broker  
-ESECONF    :  Enterprise Security Extension configuration directory  
-LIC        :  License directory
+* **BASEDIR**    :  Base directory for installation  
+* **CONF**       :  Configuration directory for HiveMQ Broker  
+* **ESECONF**    :  Enterprise Security Extension configuration directory  
+* **LIC**        :  License directory
 
 ```  
 BASEDIR=/Users/williamsommers  
 CONF=${BASEDIR}/src/hivemq/docker/conf  
 ESECONF=${BASEDIR}/src/hivemq/docker/eseconf  
 LIC=${BASEDIR}/src/hivemq/docker/license  
+```
+
+* **CCTRPORT**   :  HiveMQ Control Center (CC) port external mapped to 8080 on the inside of the container
+* **MQTTPORT**   :  MQTT port external mapped to 1883 on the inside of the container
+* **WSPORT**     :  Websocket port external mapped to 9001 on the inside of the container
+
+```
+CCTRPORT=8087
+MQTTPORT=1887
+WSPORT=8007
 ```
